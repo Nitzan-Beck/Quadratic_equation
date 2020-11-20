@@ -28,12 +28,12 @@ import org.w3c.dom.Text;
        a.addTextChangedListener(aEditText);
        b.addTextChangedListener(bEditText);
        c.addTextChangedListener(cEditText);
-       x1.findViewById(R.id.textView);
-       x2.findViewById(R.id.textView2);
+       x1=findViewById(R.id.textView);
+       x2=findViewById(R.id.textView2);
     }
      public void Calc(View view) {
-         x1.setText("x1="+(double)(-b1+Math.sqrt(b1*b1-4*a1*c1)/(2*a1)));
-         x2.setText("x2="+(double)(-b1-Math.sqrt(b1*b1-4*a1*c1)/(2*a1)));
+         x1.setText("x1="+(-b1+Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
+         x2.setText("x2="+(-b1-Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
      }
 
      private TextWatcher aEditText= new TextWatcher() {
