@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -32,8 +33,9 @@ import org.w3c.dom.Text;
        x2=findViewById(R.id.textView2);
     }
      public void Calc(View view) {
-         x1.setText("x1="+(-b1+Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
-         x2.setText("x2="+(-b1-Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
+
+         x1.setText("x1="+(-1*b1+Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
+         x2.setText("x2="+(-1*b1-Math.sqrt(b1*b1-4*a1*c1))/(2*a1));
      }
 
      private TextWatcher aEditText= new TextWatcher() {
@@ -45,7 +47,7 @@ import org.w3c.dom.Text;
          @Override
          public void onTextChanged(CharSequence s, int start, int before, int count) {
              try {
-                 a1=Double.parseDouble(a.toString());
+                 a1=Double.parseDouble(a.getText().toString());
              }
              catch (NumberFormatException e){
                  a1=0.0;
@@ -68,7 +70,7 @@ import org.w3c.dom.Text;
          @Override
          public void onTextChanged(CharSequence s, int start, int before, int count) {
              try {
-                 b1=Double.parseDouble(b.toString());
+                 b1=Double.parseDouble(b.getText().toString());
              }
              catch (NumberFormatException e){
                  b1=0.0;
@@ -89,7 +91,7 @@ import org.w3c.dom.Text;
          @Override
          public void onTextChanged(CharSequence s, int start, int before, int count) {
              try {
-                 c1=Double.parseDouble(c.toString());
+                 c1=Double.parseDouble(c.getText().toString());
              }
              catch (NumberFormatException e){
                  c1=0.0;
